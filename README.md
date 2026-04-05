@@ -1,4 +1,4 @@
-# Ansible Mastery with Terraform — TrainWithShubham
+# Ansible In One Shot — TrainWithShubham
 
 Learn Ansible hands-on with real AWS infrastructure provisioned by Terraform.
 
@@ -14,7 +14,7 @@ Learn Ansible hands-on with real AWS infrastructure provisioned by Terraform.
 
 ```bash
 # 1. Clone and enter the repo
-git clone https://github.com/LondheShubham153/ansible-in-one-shot.git
+git clone https://github.com/TrainWithShubham/ansible-in-one-shot.git
 cd ansible-in-one-shot
 
 # 2. Generate SSH key pair
@@ -73,7 +73,7 @@ ansible-in-one-shot/
 ├── terraform/                # EC2, security groups, auto-inventory
 ├── inventories/dev/          # Inventory + group_vars + host_vars
 ├── roles/                    # common, docker, nginx
-├── modules/                  # 5 learning modules (start here!)
+├── modules/                  # 6 learning modules (start here!)
 └── solutions/                # Exercises + hints
 ```
 
