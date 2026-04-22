@@ -17,6 +17,7 @@ Learn Ansible hands-on with real AWS infrastructure provisioned by Terraform.
 git clone https://github.com/pooja-bhavani/ansible-in-one-shot.git
 cd ansible-in-one-shot
 
+
 # 2. Generate SSH key pair
 mkdir -p ~/keys
 ssh-keygen -t rsa -b 4096 -f ~/keys/terra-key-ansible.pem -N ""
@@ -25,6 +26,7 @@ cp ~/keys/terra-key-ansible.pem.pub terraform/terra-key-ansible.pub
 
 # 3. Provision infrastructure
 cd terraform && terraform init && terraform apply -auto-approve && cd ..
+terraform import aws_key_pair.ansible terra-automate-key
 
 # 4. Test connectivity
 ansible all -m ping
