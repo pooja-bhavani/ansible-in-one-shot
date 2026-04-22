@@ -14,7 +14,7 @@ Learn Ansible hands-on with real AWS infrastructure provisioned by Terraform.
 
 ```bash
 # 1. Clone and enter the repo
-git clone https://github.com/TrainWithShubham/ansible-in-one-shot.git
+git clone https://github.com/pooja-bhavani/ansible-in-one-shot.git
 cd ansible-in-one-shot
 
 # 2. Generate SSH key pair
