@@ -34,7 +34,6 @@ aws s3api put-bucket-versioning \
   --versioning-configuration Status=Enabled
 
 # 5. Create DynamoDB table
-
 aws dynamodb create-table \
   --table-name terraform-locks \
   --attribute-definitions AttributeName=LockID,AttributeType=S \
