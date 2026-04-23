@@ -45,7 +45,7 @@ terraform init
 terraform workspace new envname
 terraform workspace select envname
 terraform plan -var-file="env-name.tfvars"
-terraform apply -var-file="env-name.tfvars" eg: "dev.tfvars" 
+terraform apply -var-file="env-name.tfvars" # eg: "dev.tfvars" 
 
 # 7. Test connectivity
 ansible all -m ping
