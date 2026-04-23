@@ -20,10 +20,9 @@ cd ansible-in-one-shot
 
 # 2. Generate SSH key pair
 mkdir -p ~/keys
-ssh-keygen -t rsa -b 4096 -f ~/keys/terra-key-ansible.pem -N ""
-chmod 400 ~/keys/terra-key-ansible.pem
-cp ~/keys/terra-key-ansible.pem.pub terraform/terra-key-ansible.pub
-
+ssh-keygen -t rsa -b 4096 -f ~/keys/terra-automate-key.pem -N ""
+chmod 400 ~/keys/terra-automate-key.pem
+cp ~/keys/terra-automate-key.pem.pub terra-automate-key.pub
 
 # 3. Create S3 bucket (ONLY ONCE)
 aws s3 mb s3://terraform-state-ansible-lab
