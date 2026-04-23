@@ -29,7 +29,7 @@ aws s3 mb s3://terraform-state-ansible-lab
 
 # 4. Enable versioning
 aws s3api put-bucket-versioning \
-  --bucket terraform-state-bucket \
+  --bucket terraform-state-ansible-lab \
   --versioning-configuration Status=Enabled
 
 # 5. Create DynamoDB table
