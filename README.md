@@ -41,13 +41,18 @@ aws dynamodb create-table \
 
 # 6. Provision infrastructure
 cd terraform/
-terraform init 
-terraform workspace new envname
+terraform init
+
+# 7. Create terraform workspaces to isolate/seperate environments 
+terraform workspace new dev
+terraform workspace new stage
+terraform workspace new prod
+
 terraform workspace select envname
 terraform plan -var-file="env-name.tfvars"
 terraform apply -var-file="env-name.tfvars" # eg: "dev.tfvars" 
 
-# 7. Test connectivity
+# 8. Test connectivity
 ansible all -m ping
 ```
 
