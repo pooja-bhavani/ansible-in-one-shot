@@ -40,7 +40,9 @@ aws dynamodb create-table \
   --billing-mode PAY_PER_REQUEST
 
 # 6. Provision infrastructure
-cd terraform && terraform init && terraform apply -auto-approve && cd ..
+cd terraform && terraform init 
+terraform plan -var-file="env-name.tfvars"
+terraform apply -var-file="env-name.tfvars" eg: "dev.tfvars" 
 
 # 7. Test connectivity
 ansible all -m ping
