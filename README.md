@@ -52,7 +52,14 @@ terraform workspace select envname
 terraform plan -var-file="env-name.tfvars"
 terraform apply -var-file="env-name.tfvars" # eg: "dev.tfvars" 
 
-# 8. Test connectivity
+
+# 9.For other env
+terraform import \
+  -var-file="dev.tfvars" \
+  -var="env=dev" \
+  aws_security_group.ansible_lab sg-06aa6c768413c6f81
+
+# 10. Test connectivity
 ansible all -m ping
 ```
 
