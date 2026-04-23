@@ -48,8 +48,8 @@ terraform import \
 ansible all -m ping
 ```
 
-(Optional but recommended for state locking)
-```
+## (Optional but recommended for state locking)
+```bash
 # 1. Create S3 bucket (ONLY ONCE)
 aws s3 mb s3://terraform-state-ansible-lab
 
