@@ -40,7 +40,7 @@ aws dynamodb create-table \
   --billing-mode PAY_PER_REQUEST
 
 # 6. Provision infrastructure
-cd terraform && terraform init 
+cd terraform/envname && terraform init 
 terraform plan -var-file="env-name.tfvars"
 terraform apply -var-file="env-name.tfvars" eg: "dev.tfvars" 
 
