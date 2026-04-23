@@ -26,7 +26,7 @@ cp ~/keys/terra-key-ansible.pem.pub terraform/terra-key-ansible.pub
 
 
 # 3. Create S3 bucket (ONLY ONCE)
-aws s3 mb s3://terraform-state-bucket
+aws s3 mb s3://terraform-state-ansible-lab
 
 # 4. Enable versioning
 aws s3api put-bucket-versioning \
