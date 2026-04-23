@@ -24,21 +24,6 @@ ssh-keygen -t rsa -b 4096 -f ~/keys/terra-automate-key.pem -N ""
 chmod 400 ~/keys/terra-automate-key.pem
 cp ~/keys/terra-automate-key.pem.pub terra-automate-key.pub
 
-# 3. Create S3 bucket (ONLY ONCE)
-aws s3 mb s3://terraform-state-ansible-lab
-
-# 4. Enable versioning
-aws s3api put-bucket-versioning \
-  --bucket terraform-state-ansible-lab \
-  --versioning-configuration Status=Enabled
-
-# 5. Create DynamoDB table
-aws dynamodb create-table \
-  --table-name terraform-locks \
-  --attribute-definitions AttributeName=LockID,AttributeType=S \
-  --key-schema AttributeName=LockID,KeyType=HASH \
-  --billing-mode PAY_PER_REQUEST
-
 # 6. Provision infrastructure
 cd terraform/
 terraform init
@@ -63,6 +48,26 @@ terraform import \
 ansible all -m ping
 ```
 
+(Optional but recommended for state locking)
+```
+# 1. Create S3 bucket (ONLY ONCE)
+aws s3 mb s3://terraform-state-ansible-lab
+
+# 2. Enable versioning
+aws s3api put-bucket-versioning \
+  --bucket terraform-state-ansible-lab \
+  --versioning-configuration Status=Enabled
+
+# 3. Create DynamoDB table
+aws dynamodb create-table \
+  --table-name terraform-locks \
+  --attribute-definitions AttributeName=LockID,AttributeType=S \
+  --key-schema AttributeName=LockID,KeyType=HASH \
+  --billing-mode PAY_PER_REQUEST
+
+# 4. After adding bacnkends
+terraform init -reconfigure
+```
 ---
 
 ## Course Modules
